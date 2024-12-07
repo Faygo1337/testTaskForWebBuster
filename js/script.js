@@ -52,7 +52,7 @@ document.querySelectorAll(".faq-header").forEach((header) => {
     // Добавляем небольшую задержку для синхронизации с анимацией контента
     setTimeout(() => {
       if (document.querySelector(".faq-item.active")) {
-        faqSection.style.setProperty("--faq-height", "130vh");
+        faqSection.style.setProperty("--faq-height", "106vh");
       } else {
         faqSection.style.setProperty("--faq-height", "82vh");
       }
