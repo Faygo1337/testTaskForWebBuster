@@ -1,0 +1,712 @@
+@import url("/css/normalize.css");
+@import url("/css/fonts/futuraFuturisC.css");
+@color-primary: #0073e6;
+@color-secondary: #ffffff;
+@primary-color: #333;
+@secondary-color: #ff5722;
+@transparent: rgba(255, 255, 255, 0);
+@header-color: #07086c;
+@border-color: #ccc;
+@background-color: rgba(255, 255, 255, 0.8);
+@secondary-font-family: "FuturaFuturisLightC";
+@icon-size: 40px;
+@icon-background: #f2f2f2;
+@block-padding: 20px;
+@block-border-radius: 10px;
+.fonts(@fontWeght, @fontSize, @lineHeight) {
+  font-family: "FuturaFuturisC";
+  font-weight: @fontWeght;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f4;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  .container {
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+    max-width: 65%;
+    &.scrolled {
+      transition: background-color 0.5s ease;
+      border-radius: 21px;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+    @keyframes background-color {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 18px;
+    li {
+      margin-left: 20px;
+      a {
+        .fonts(300, 18px, 22.1px);
+        font-family: "FuturaFuturisLightC";
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .contact {
+    color: white;
+    .fonts(400, 18px, 22.1px);
+    display: flex;
+    align-items: center;
+    img {
+      padding-right: 10px;
+    }
+    span {
+      font-weight: 700;
+      padding-left: 7px;
+    }
+    // &:hover {
+    //     text-decoration: underline;
+    // }
+  }
+}
+main {
+  .intro {
+    display: flex;
+    justify-content: center;
+    gap: 140px;
+    background-image: url("/image/backgroundHeader.svg");
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    background-color: #07086c;
+    background-size: 100%;
+    color: darken(@color-primary, 40%);
+    padding: 222px 50px 155px 50px;
+    .intro-content {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        margin: 14px 0 0 0;
+        color: white;
+        .fonts(700, 66.23px, 39.09px);
+        span {
+          opacity: 0.5;
+          .fonts(700, 57.23px, 89.09px);
+        }
+        span ~ span {
+          opacity: 1;
+          .fonts(700, 61.23px, 59.09px);
+        }
+      }
+      p {
+        .fonts(300, 23px, 29.85px);
+        font-family: "FuturaFuturisLightC";
+        width: 99%;
+        margin: 26px 0 0 0;
+        color: #969af7;
+      }
+      ul {
+        margin: 40px 0 0 0;
+        list-style: none;
+        padding: 0;
+        &:before {
+          content: "";
+          display: block;
+          background: linear-gradient(to right, white, #07086c);
+          width: 42%;
+          height: 150px;
+          opacity: 0.25;
+          position: absolute;
+          border-radius: 10px;
+        }
+        li {
+          font-family: "FuturaFuturisLightC";
+          font-weight: 300;
+          color: white;
+          margin: 20px 0 0 32px;
+          font-size: 18px;
+          position: relative;
+          padding-left: 25px;
+          &:before {
+            content: "✓";
+            color: rgb(68, 171, 255);
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+    .callback-form {
+      background-color: white;
+      border-radius: 10px;
+      max-width: 380px;
+      text-align: center;
+      .callback-for-title {
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+        height: 110px;
+        .fonts(900, 20px, 26.77px);
+        background-color: #6a32b4;
+        h2 {
+          line-height: 32px;
+          margin: 0;
+          padding: 28px;
+          color: white;
+        }
+      }
+      h2 {
+        color: @primary-color;
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 80%;
+        margin: 30px auto 0 auto;
+        label {
+          font-family: "FuturaFuturisLightC";
+          margin: 0 0px 10px 20px;
+          color: #626366;
+          text-align: left;
+        }
+        input {
+          font-family: "FuturaFuturisLightC";
+          height: 36px;
+          background: #f5f3ff;
+          margin: 0 0 16px 0;
+          padding: 10px;
+          border: none;
+          box-shadow: -2.1px -2.2px 0px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+        input::placeholder {
+          padding-left: 10px;
+          font-size: 20px;
+          opacity: 0.4;
+        }
+        button {
+          .fonts(300, 18px, 26.77px);
+          font-family: "FuturaFuturisLightC";
+          padding: 17px 16px 12px 16px;
+          background-color: #ffa500;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          margin: 20px 0 0 0;
+          cursor: pointer;
+          &:hover {
+            background-color: darken(@secondary-color, 10%);
+          }
+        }
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0 35px 0;
+        font-size: 12px;
+        color: #c0c0c0;
+        img {
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+  .why-us {
+    padding: 30px 20px;
+    h2 {
+      color: black;
+      text-align: center;
+      margin-bottom: 30px;
+      .fonts(700, 45px, 45px);
+    }
+    p {
+      .fonts(400, 22px, 24px);
+      font-family: @secondary-font-family;
+      margin: 0 auto;
+      width: 55%;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .info {
+      margin: 0 auto;
+      gap: 50px;
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      flex-wrap: wrap;
+      .info-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: @block-padding;
+        background-color: #fff;
+        border-radius: @block-border-radius;
+        margin-bottom: 20px;
+        width: 22%;
+        height: 400px;
+        background-image: url("/image/whyUsBackgroundIcon.svg");
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        .icon {
+          margin: 20px 0 35px 0;
+        }
+        h3 {
+          .fonts(700, 20px, 23.28px);
+          color: #2a336c;
+          margin: 0 0 10px;
+        }
+        p {
+          width: 95%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+svg {
+  margin: -32px 0 0 0;
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+.creater {
+  background-image: url("/image/createrBack.png");
+  background-color: #0001d0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 728px;
+  margin: 0;
+  padding: 0;
+  h2 {
+    margin: -4px 0 0 0;
+    .fonts(700, 45px, 45px);
+    color: white;
+    padding: 90px 0 65px 0;
+    text-align: center;
+  }
+  span {
+    display: block;
+    .fonts(300, 20px, 35px);
+    font-family: "FuturaFuturisLightC";
+    color: white;
+    margin: 0 auto;
+    margin: 70px auto;
+    width: 66%;
+  }
+  .slider-container {
+    position: relative;
+    margin: 0 auto;
+    width: 76.6%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 242px;
+      height: 174px;
+      margin: 0 16px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.6);
+      border: none;
+      border-radius: 100%;
+      width: 39px;
+      height: 39px;
+      cursor: pointer;
+      z-index: 10;
+      &.left {
+        background-image: url("/image/sliderLeft.svg");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        left: 10px;
+      }
+      &.right {
+        background-image: url("/image/sliderRight.svg");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        right: 10px;
+      }
+    }
+  }
+}
+.scheme {
+  height: 169vh;
+  margin: -4px 0 0 0;
+  background-image: url("/image/schemeBack.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: white;
+  h2 {
+    padding: 80px 0 30px 0;
+    .fonts(700, 45px, 45px);
+    color: #111111;
+    margin: 0;
+    text-align: center;
+  }
+  p {
+    .fonts(300, 22px, 24px);
+    font-family: @secondary-font-family;
+    margin: 0 auto;
+    width: 55%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .workflow {
+    &-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      width: 80%;
+      margin: 0 auto;
+      .step {
+        width: 440px;
+        background: url("/image/stepCardBack.svg") no-repeat 100% 100%,
+          linear-gradient(90deg, #02037e, #0926c0);
+        color: #fff;
+        position: relative;
+        border-radius: 15px;
+        min-height: 250px;
+        padding: 52px 35px 23px 35px;
+        .step-title {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          width: 65%;
+        }
+        .number {
+          color: #969af7;
+          .fonts(700, 36px, 41.9px);
+          margin: 0;
+        }
+        .title {
+          .fonts(700, 18px, 25px);
+          margin: 0;
+        }
+        .description {
+          width: 69%;
+          color: #e3e3e3;
+          .fonts(300, 18px, 30px);
+          font-family: "FuturaFuturisLightC";
+          margin: 40px 0 0 57px;
+        }
+        &:nth-child(-n + 2) {
+          &::after {
+            content: "";
+            position: absolute;
+            right: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 100px;
+            background: #0926bf;
+            clip-path: polygon(0 0, 0 100%, 105% 50%);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 1;
+          }
+        }
+        // Блоки принимающие стрелку справа (2-3) - углубление слева
+        &:nth-child(2),
+        &:nth-child(3) {
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 31.8%;
+            transform: rotate(180deg);
+            width: 36px;
+            height: 120px;
+            background: #f0f0f0;
+            clip-path: polygon(100% 0%, -4% 50%, 100% 100%);
+          }
+        }
+        // Третий блок - стрелка вниз
+        &:nth-child(3) {
+          &::after {
+            content: "";
+            position: absolute;
+            left: 253px;
+            top: 90%;
+            transform: rotate(90deg);
+            width: 36px;
+            height: 100px;
+            background: #0715a1;
+            clip-path: polygon(0 0, 0 100%, 105% 50%);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 1;
+          }
+        }
+        // Блок принимающий стрелку сверху (4) - углубление сверху
+        &:nth-child(4),
+        &:nth-child(5) {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 32.8%;
+            right: 0;
+            width: 36px;
+            height: 120px;
+            background: #f0f0f0;
+            clip-path: polygon(100% 0%, -4% 50%, 100% 100%);
+          }
+        }
+        // Блоки 4-5 - стрелка влево
+        &:nth-child(n + 5) {
+          &::after {
+            content: "";
+            position: absolute;
+            left: -35px;
+            top: 36%;
+            transform: rotate(180deg);
+            width: 36px;
+            height: 100px;
+            background: #03047f;
+            clip-path: polygon(0 0, 0 100%, 105% 50%);
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: 1;
+          }
+        }
+        // Блоки принимающие стрелку слева (5-6) - углубление справа
+        &:nth-child(6) {
+          &::before {
+            content: "";
+            position: absolute;
+            top: -13%;
+            transform: rotate(270deg);
+            left: 50%;
+            width: 36px;
+            height: 120px;
+            background: #f0f0f0;
+            clip-path: polygon(100% 0%, -4% 50%, 100% 100%);
+          }
+        }
+      }
+    }
+  }
+  button {
+    .fonts(400, 18px, 19px);
+    font-family: @secondary-font-family;
+    width: 300px;
+    height: 56px;
+    border: none;
+    background-color: #ffa500;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 50px auto;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    nav ul {
+      flex-direction: column;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+    .contact {
+      margin-top: 10px;
+    }
+  }
+  .why-us .benefits .benefit {
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 1024px) {
+  .scheme .workflow-steps {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 40px;
+    .step {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+.faq-section {
+  --faq-height: 125vh;
+  position: relative;
+  margin-top: -4px;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--faq-height);
+    background: url("/image/faqBackground.png") no-repeat 0 0, #090aa7;
+    z-index: -1;
+    background-position: 100% 100%;
+    // background-size: cover;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  h2 {
+    .fonts(700, 45px, 45px);
+    text-align: center;
+    margin: 0;
+    padding: 80px 0 50px 0;
+    color: white;
+    position: relative;
+  }
+  .faq-container {
+    margin: 0 auto;
+    max-width: 65%;
+    position: relative;
+    // padding-bottom: 80px;
+    .faq-item {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      .faq-header {
+        padding: 30px;
+        background: #fff;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        border-radius: 10px;
+        &:hover {
+          background-color: #f5f5f5;
+        }
+        h3 {
+          .fonts(400, 24px, 28px);
+          margin: 0;
+          padding-right: 40px;
+        }
+        .toggle-icon {
+          transform: rotate(90deg);
+          width: 39px;
+          height: 39px;
+          background-image: url("/image/sliderRight.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          transition: transform 0.3s ease;
+          background-color: #686eec;
+          border-radius: 50%;
+        }
+      }
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #f9f9f9;
+        .content-inner {
+          padding: 40px 32px 60px 32px;
+          .fonts(300, 20px, 30px);
+          font-family: @secondary-font-family;
+          color: #333333;
+        }
+      }
+      &.active {
+        .faq-header {
+          background: linear-gradient(180deg, #969af7, #686eec);
+          color: white;
+          .toggle-icon {
+            transform: rotate(0deg);
+            background: url("/image/arrowUp.svg") no-repeat center, white;
+          }
+          h3 {
+            color: white;
+          }
+        }
+        .faq-content {
+          max-height: 2000px;
+          transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .faq-section {
+    .faq-container {
+      max-width: 90%;
+    }
+  }
+}
+.footer {
+  background-color: #333333;
+  height: 23vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75%;
+    gap: 57px;
+    margin: 0 auto;
+    .info-block {
+      display: flex;
+      gap: 46px;
+      p {
+        .fonts(400, 18px, 22px);
+        font-family: @secondary-font-family;
+        color: white;
+      }
+    }
+    button {
+      background-color: #969af7;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 22px 76px;
+    }
+  }
+}
