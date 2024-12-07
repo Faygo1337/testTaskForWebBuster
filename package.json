@@ -1,0 +1,15 @@
+{
+  "name": "semitex-website",
+  "version": "1.0.0",
+  "description": "SEMITEX Website",
+  "main": "index.html",
+  "scripts": {
+    "less": "less-watch-compiler src/ css/ styles.less"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "less": "^4.1.1",
+    "less-watch-compiler": "^1.16.0"
+  }
+}
