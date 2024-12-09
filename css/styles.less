@@ -1,5 +1,6 @@
 @import url("normalize.css");
 @import url("fonts/futuraFuturisC.css");
+
 @color-primary: #0073e6;
 @color-secondary: #ffffff;
 @primary-color: #333;
@@ -13,12 +14,14 @@
 @icon-background: #f2f2f2;
 @block-padding: 20px;
 @block-border-radius: 10px;
+
 .fonts(@fontWeght, @fontSize, @lineHeight) {
   font-family: "FuturaFuturisC";
   font-weight: @fontWeght;
   font-size: @fontSize;
   line-height: @lineHeight;
 }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -56,6 +59,7 @@ body {
     font-size: 24px;
     font-weight: bold;
   }
+
   .nav ul {
     list-style: none;
     margin: 0;
@@ -75,6 +79,7 @@ body {
       }
     }
   }
+
   .contact {
     color: white;
     .fonts(400, 18px, 22.1px);
@@ -90,6 +95,9 @@ body {
     // &:hover {
     //     text-decoration: underline;
     // }
+  }
+  .nav {
+    transition: all 0.3s ease;
   }
 }
 main {
@@ -684,7 +692,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -710,3 +718,554 @@ svg {
     }
   }
 }
+
+// ... существующий код ...
+
+// Добавьте эти медиа-запросы в конец файла
+@media (max-width: 1440px) {
+  .header {
+    .container {
+      max-width: 75%;
+      margin: 45px auto;
+      padding: 25px 25px;
+
+      &.scrolled {
+        border-radius: 18px;
+      }
+    }
+
+    .nav ul {
+      gap: 15px;
+      li a {
+        .fonts(300, 16px, 20px);
+      }
+    }
+
+    .contact {
+      .fonts(400, 16px, 20px);
+      img {
+        width: 35px;
+        height: auto;
+        padding-right: 8px;
+      }
+    }
+  }
+
+  main .intro {
+    padding: 180px 30px 120px;
+    gap: 80px;
+
+    .intro-content {
+      width: 45%;
+
+      h1 {
+        .fonts(700, 50px, 35px);
+      }
+    }
+  }
+
+  .scheme .workflow-steps .step {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    .container {
+      max-width: 85%;
+      margin: 35px auto;
+      padding: 20px 20px;
+
+      &.scrolled {
+        border-radius: 15px;
+      }
+    }
+
+    .nav ul {
+      gap: 12px;
+      li a {
+        .fonts(300, 14px, 18px);
+      }
+    }
+
+    .contact {
+      .fonts(400, 14px, 18px);
+      img {
+        width: 30px;
+        padding-right: 6px;
+      }
+    }
+  }
+
+  main {
+    .intro {
+      padding: 150px 20px 100px;
+      gap: 50px;
+
+      .intro-content {
+        width: 100%;
+        text-align: center;
+
+        ul:before {
+          width: 100%;
+        }
+      }
+
+      .callback-form {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .why-us {
+    .info {
+      width: 95%;
+
+      .info-block {
+        width: calc(50% - 40px);
+        height: auto;
+      }
+    }
+  }
+
+  .creater {
+    height: auto;
+    padding-bottom: 50px;
+
+    span {
+      width: 90%;
+    }
+
+    .slider-container {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .container {
+      max-width: 90%;
+      margin: 25px auto;
+      padding: 15px 15px;
+      flex-direction: column;
+      gap: 15px;
+
+      &.scrolled {
+        border-radius: 12px;
+      }
+    }
+
+    .nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      li {
+        margin-left: 0;
+        a {
+          .fonts(300, 16px, 20px);
+        }
+      }
+    }
+
+    .contact {
+      .fonts(400, 16px, 20px);
+      justify-content: center;
+      img {
+        width: 28px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  main .intro {
+    padding: 120px 15px 80px;
+
+    .intro-content {
+      h1 {
+        .fonts(700, 40px, 30px);
+      }
+
+      p {
+        .fonts(300, 18px, 24px);
+      }
+    }
+  }
+
+  .why-us {
+    .info .info-block {
+      width: 100%;
+    }
+
+    p {
+      width: 90%;
+    }
+  }
+
+  .scheme {
+    height: auto;
+
+    p {
+      width: 90%;
+    }
+
+    .workflow-steps .step {
+      width: 100%;
+    }
+  }
+
+  .footer {
+    height: auto;
+    padding: 30px 0;
+
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+
+      .info-block {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header .container {
+    margin: 15px auto;
+  }
+
+  main .intro {
+    .intro-content h1 {
+      .fonts(700, 32px, 28px);
+    }
+
+    .callback-form {
+      max-width: 100%;
+    }
+  }
+
+  .why-us h2,
+  .creater h2,
+  .scheme h2,
+  .faq-section h2 {
+    .fonts(700, 32px, 36px);
+  }
+
+  .faq-section .faq-container {
+    max-width: 95%;
+
+    .faq-item .faq-header h3 {
+      .fonts(400, 18px, 22px);
+    }
+  }
+}
+
+// Добавьте эти стили для бургер-меню
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  }
+}
+
+// Медиа-запросы с плавным уменьшением шрифтов
+@media all and (max-width: 1440px) {
+  .header {
+    .container {
+      max-width: 75%;
+
+      .nav ul li a {
+        font-size: calc(18px - 2px);
+      }
+
+      .contact {
+        font-size: calc(18px - 2px);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .header {
+    .container {
+      max-width: 85%;
+
+      .nav ul li a {
+        font-size: calc(18px - 4px);
+      }
+
+      .contact {
+        font-size: calc(18px - 4px);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  .header {
+    .container {
+      padding: 15px;
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+          border-radius: 21px;
+          background: rgba(0, 0, 0, 0.6);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+        }
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        li a {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .contact {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  body{
+    width: 100dvw;
+  
+  .header {
+    width: 100%;
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 80%;
+      .nav {
+        max-width: 80%;
+        left: 4%;
+      }
+    }
+  }
+  main {
+    .intro {
+      background-size: revert;
+      .intro-content {
+        max-width: 95%;
+        h1 {
+          .fonts(700, 5dvh, 36px);
+          span {
+            display: block;
+            font-size: 4dvh;
+            line-height: 40px;
+          }
+          span + span {
+            font-size: 5dvh;
+          }
+        }
+        p {
+          font-size: 2.1dvh;
+          margin-top: 3px;
+        }
+        ul {
+          padding-left: 10px;
+          &::before {
+            width: 88%;
+          }
+          li {
+            font-size: 2.2dvh;
+            padding-top: 6px;
+            padding-left: 0;
+          }
+        }
+      }
+      .callback-form {
+        max-width: 90%;
+        margin-top: 6dvh;
+        .callback-for-title {
+          height: 70px;
+          h2 {
+            font-size: 3dvh;
+          }
+        }
+        form {
+          label {
+            font-size: 2.6dvh;
+          }
+          input {
+            height: 20px;
+            &::placeholder {
+              font-size: 2.5dvh;
+            }
+          }
+          button {
+            padding: 13px 0px 9px 0;
+            font-size: 2.5dvh;
+          }
+        }
+      }
+    }
+    .why-us {
+      h2 {
+        font-size: 5dvh;
+      }
+      p {
+        margin: 0 auto;
+        width: 100%;
+        font-size: 3dvh;
+      }
+      .info{
+        gap: 20px;
+        .info-block {
+          width: 90%;
+          h3 {
+            text-align: center;
+          }
+        }
+
+      } 
+    }
+    .creater {
+      background-size: auto;
+      h2 {
+        margin: -5px 0 0 0;
+        padding: 40px 0;
+        font-size: 5dvh;
+      }
+      span {
+        font-size: 3dvh;
+      }
+        .slider-container {
+        width: 64%;
+        .slide{
+          min-width: 192px;
+          height: 174px;
+          margin: 0 46px; 
+        }
+
+      }
+    }
+    .scheme {
+      height: 380dvh;
+      background-size: auto;
+      p {
+        font-size: 3dvh;
+      }
+      h2 {
+        font-size: 5dvh;
+      }
+      .workflow-steps {
+        .step {
+          margin: 0 auto;
+          width: 60%;
+          height: 270px;
+          padding: 20px;
+          .description{
+            margin: 40px 0 0 0;
+            width: 100%;
+            font-size: 2.9dvh;
+            line-height: 1.3;
+        
+          }
+          .title {
+            width: 150%;
+          }
+          .step-title{
+            margin: 20px 0 0 0;
+            width: 100%;
+            gap: 0;
+          }
+          .number{
+            font-size: 8dvh;
+  
+          }
+          &:nth-child(4) {
+            order: 6;
+          }
+          &:nth-child(5) {
+            order: 5;
+          }
+          &:nth-child(6) {
+            order: 4;
+          }
+        }
+      }
+    }
+    .faq-section{
+      --faq-height: 167dvh;
+      h2{
+        font-size: 5dvh;
+      }
+      .faq-container{
+        margin-bottom: 0;
+        .faq-item {
+          .faq-header{
+            .toggle-icon{
+              width: 57px;
+            } 
+            .faq-content{
+              .content-inner{
+                font-size: 3dvh;
+                line-height: 1.3;
+              }
+            }
+          }
+        } 
+
+      }
+    }
+    .footer{
+      .footer-content{
+        .info-block {
+          gap: 0;
+        } 
+      } 
+    } 
+  }
+}
+}
+

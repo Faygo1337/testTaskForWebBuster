@@ -1,3 +1,38 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const burgerMenu = document.createElement("div");
+  burgerMenu.className = "burger-menu";
+  burgerMenu.innerHTML = "<span></span><span></span><span></span>";
+
+  const nav = document.querySelector(".header .nav");
+  const container = document.querySelector(".header .container");
+
+  // Вставляем бургер-меню перед nav
+  container.insertBefore(burgerMenu, nav);
+
+  burgerMenu.addEventListener("click", function () {
+    this.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+
+  // Закрываем меню при клике вне его
+  document.addEventListener("click", function (event) {
+    if (!nav.contains(event.target) && !burgerMenu.contains(event.target)) {
+      burgerMenu.classList.remove("active");
+      nav.classList.remove("active");
+    }
+  });
+});
+
+window.addEventListener("resize", function () {
+  const nav = document.querySelector(".header .nav");
+  const burgerMenu = document.querySelector(".burger-menu");
+
+  if (window.innerWidth > 768) {
+    nav.classList.remove("active");
+    if (burgerMenu) burgerMenu.classList.remove("active");
+  }
+});
+
 window.addEventListener("scroll", function () {
   const header = document.getElementById("header");
   if (window.scrollY > 75) {
@@ -51,10 +86,18 @@ document.querySelectorAll(".faq-header").forEach((header) => {
 
     // Добавляем небольшую задержку для синхронизации с анимацией контента
     setTimeout(() => {
-      if (document.querySelector(".faq-item.active")) {
-        faqSection.style.setProperty("--faq-height", "106vh");
+      if (window.innerWidth <= 480) {
+        if (document.querySelector(".faq-item.active")) {
+          faqSection.style.setProperty("--faq-height", "357dvh");
+        } else {
+          faqSection.style.setProperty("--faq-height", "167dvh");
+        }
       } else {
-        faqSection.style.setProperty("--faq-height", "82vh");
+        if (document.querySelector(".faq-item.active")) {
+          faqSection.style.setProperty("--faq-height", "106vh");
+        } else {
+          faqSection.style.setProperty("--faq-height", "82vh");
+        }
       }
     }, 50);
   });
